@@ -403,12 +403,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height
 .see-more { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 44px; }
 .see-more__count { font-size: .84rem; color: var(--muted); letter-spacing: .02em; }
 
-/* ---------- Reels Instagram ---------- */
-.reels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-@media (max-width: 1000px) { .reels { grid-template-columns: repeat(2, 1fr); max-width: 720px; margin-inline: auto; } }
-@media (max-width: 560px) { .reels { grid-template-columns: 1fr; max-width: 400px; } }
-.reel { position: relative; aspect-ratio: 9/16; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: #111; }
-.reel iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* ---------- Reels Instagram (embed officiel) ---------- */
+.reels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 920px; margin: 40px auto 0; align-items: start; }
+@media (max-width: 640px) { .reels { grid-template-columns: 1fr; max-width: 430px; } }
+.reels .instagram-media { min-width: 0 !important; width: 100% !important; margin: 0 auto !important; }
 
 /* ---------- Bouton WhatsApp flottant ---------- */
 .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 120; width: 58px; height: 58px; border-radius: 999px; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 14px 30px -10px rgba(37,211,102,.6); transition: transform .2s var(--ease); }
