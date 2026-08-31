@@ -403,12 +403,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height
 .see-more { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 44px; }
 .see-more__count { font-size: .84rem; color: var(--muted); letter-spacing: .02em; }
 
-/* ---------- Reels Instagram — grille de 4 cartes complètes (façon Talia) ---------- */
-.reels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 42px auto 0; }
-.ig-tile { aspect-ratio: 276 / 634; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 14px 34px rgba(20,40,25,.14); }
-.ig-tile iframe { display: block; width: 100%; height: 100%; border: 0; }
-@media (max-width: 900px){ .reels { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
-@media (max-width: 520px){ .reels { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; } }
+/* ---------- Reels Instagram — 4 cartes fixes centrées (façon Talia) ---------- */
+.reels { display: grid; grid-template-columns: repeat(4, 274px); justify-content: center; gap: 16px; margin: 42px auto 0; }
+.ig-tile { width: 274px; height: 638px; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 14px 34px rgba(20,40,25,.14); }
+.ig-tile iframe { display: block; width: 274px; height: 638px; border: 0; }
+@media (max-width: 1180px){ .reels { grid-template-columns: repeat(2, 274px); } }
+@media (max-width: 620px){ .reels { grid-template-columns: 274px; } }
 
 /* ---------- Bouton WhatsApp flottant ---------- */
 .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 120; width: 58px; height: 58px; border-radius: 999px; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 14px 30px -10px rgba(37,211,102,.6); transition: transform .2s var(--ease); }
