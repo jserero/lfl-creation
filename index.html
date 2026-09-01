@@ -7,7 +7,7 @@
 <meta name="description" content="LFL Création, La Ferme de Longchamp : créateur fruitier depuis 1948. Corbeilles, sculptures, plateaux et jus pressés maison. 100 % frais de Rungis, livraison gratuite à Paris & Île-de-France.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=27">
+<link rel="stylesheet" href="assets/css/style.css?v=28">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍉</text></svg>">
 </head>
 <body>
@@ -266,6 +266,28 @@
       <div class="ig-tile"><iframe src="https://www.instagram.com/reel/DURFfWUiCUn/embed/" title="Reel LFL" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen frameborder="0"></iframe></div>
       <div class="ig-tile"><iframe src="https://www.instagram.com/reel/DUoBBJvjOd7/embed/" title="Reel LFL" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen frameborder="0"></iframe></div>
     </div>
+    <script>
+    /* Aligne les cartes reels sur la hauteur exacte renvoyée par Instagram (aucun vide, aucun rognage, hauteurs égales). */
+    (function(){
+      var tiles = document.querySelectorAll('.reels .ig-tile');
+      var maxH = 0;
+      function apply(){
+        if(!maxH) return;
+        for(var i=0;i<tiles.length;i++){
+          tiles[i].style.height = maxH + 'px';
+          var f = tiles[i].querySelector('iframe');
+          if(f) f.style.height = maxH + 'px';
+        }
+      }
+      window.addEventListener('message', function(e){
+        if((e.origin||'').indexOf('instagram.com') === -1) return;
+        var d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch(_) { return; }
+        if(!d || d.type !== 'MEASURE' || !d.details || !d.details.height) return;
+        var h = Math.round(d.details.height);
+        if(h > maxH){ maxH = h; apply(); }
+      });
+    })();
+    </script>
     <div class="center" style="margin-top:34px">
       <a href="https://www.instagram.com/maison_lfl/" target="_blank" rel="noopener noreferrer" class="btn btn--dark">Suivre sur Instagram</a>
     </div>

@@ -403,10 +403,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height
 .see-more { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 44px; }
 .see-more__count { font-size: .84rem; color: var(--muted); letter-spacing: .02em; }
 
-/* ---------- Reels Instagram — 4 cartes fixes centrées (façon Talia) ---------- */
-.reels { display: grid; grid-template-columns: repeat(4, 274px); justify-content: center; gap: 16px; margin: 42px auto 0; }
-.ig-tile { width: 274px; height: 638px; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 14px 34px rgba(20,40,25,.14); }
-.ig-tile iframe { display: block; width: 274px; height: 638px; border: 0; }
+/* ---------- Reels Instagram — 4 cartes fixes centrées (identique Talia) ---------- */
+.reels { display: grid; grid-template-columns: repeat(4, 274px); justify-content: center; gap: 32px; margin: 42px auto 0; }
+.ig-tile { width: 274px; height: 552px; border-radius: 14px; overflow: hidden; background: #000; border: 1px solid rgba(20,40,25,.14); box-shadow: none; }
+.ig-tile iframe { display: block; width: 274px; height: 552px; border: 0; }
 @media (max-width: 1180px){ .reels { grid-template-columns: repeat(2, 274px); } }
 @media (max-width: 620px){ .reels { grid-template-columns: 274px; } }
 
